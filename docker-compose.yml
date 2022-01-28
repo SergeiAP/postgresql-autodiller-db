@@ -1,13 +1,13 @@
 version: '3.8'
 
 volumes:
-    postgresql-autodiller-test-db-data:
-    postgresql-autodiller-test-db-sqls:
+    autodiller-db-data:
+    autodiller-db-sqls:
 
 services:
     postgres:
         build: ./db
-        container_name: postgresql-autodiller-db-test
+        container_name: autodiller-db
         restart: always
         environment:
          - POSTGRES_USER=postgres
@@ -25,6 +25,6 @@ services:
          - '5433:5432'
         volumes:
          # store data from the database
-         - postgresql-autodiller-test-db-data:/var/lib/postgresql/data
+         - autodiller-db-data:/var/lib/postgresql/data
          # put sql scripts for any 
-         - postgresql-autodiller-test-db-sqls:/root/sql_dmls
+         - autodiller-db-sqls:/root/sql_dmls
