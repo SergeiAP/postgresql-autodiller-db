@@ -1,3 +1,9 @@
+launch_dockerfile_db:
+	docker build -t autodiller-db_postgres .
+	docker run --name autodiller-db_postgres -p 5433:5432 autodiller-db_postgres
+rebuild_restart_dockerfile_db:
+	docker rm -f autodiller-db_postgres
+	make launch_dockerfile_db
 launch_docker_compose_db:
 	chmod +x init_docker_named_volumes.sh
 	./init_docker_named_volumes.sh
