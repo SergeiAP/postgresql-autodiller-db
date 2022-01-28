@@ -1,25 +1,30 @@
 version: '3.8'
+
+volumes:
+    postgresql-autodiller-test-db-data:
+    postgresql-autodiller-test-db-sqls:
+
 services:
     postgres:
         build: ./db
-	container_name: postgresql-autodiller-db-test
+        container_name: postgresql-autodiller-db-test
         restart: always
         environment:
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=postgres
-	  - POSTGRES_DB=autodiller_salon
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=postgres
+         - POSTGRES_DB=autodiller_salon
         logging:
-          options:
-	    driver: "json-file"
-            max-size: 20m
-            max-file: "5"
-            labels: "production_status"
+            driver: "json-file"
+            options:
+                max-size: 20m
+                max-file: "5"
+                labels: "production_status"
         labels:
             production_status: "testing"
         ports:
-          - '5433:5432'
+         - '5433:5432'
         volumes:
-          # store data from the database
-          - postgresql-autodiller-test-db-data:/var/lib/postgresql/data
-          # put sql scripts for any 
-          - postgresql-autodiller-test-db-sqls:/root/sql_dmls
+         # store data from the database
+         - postgresql-autodiller-test-db-data:/var/lib/postgresql/data
+         # put sql scripts for any 
+         - postgresql-autodiller-test-db-sqls:/root/sql_dmls
