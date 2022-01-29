@@ -1,5 +1,5 @@
 launch_dockerfile_db:
-	docker build -f Dockerfile-init -t autodiller-db_postgres .
+	docker build -f ./db/Dockerfile-init -t autodiller-db_postgres .
 	docker run --name autodiller-db_postgres -p 5433:5432 autodiller-db_postgres
 delete_dockerfile_db:
 	docker stop autodiller-db_postgres
