@@ -14,9 +14,9 @@ rebuild_docker_compose_db:
 	docker rmi -f autodiller-db_postgres
 	docker-compose up -d
 init_insert_db:
-	docker exec -it autodiller-db_postgres bash
-	psql -U postgres -d autodiller_salon -f /root/sql_dmls/init_insert.sql
+	docker exec -it autodiller-db_postgres bash -c \
+	'psql -U postgres -d autodiller_salon -f /root/sql_dmls/init_insert.sql'
 simulate_operations_db:
-	docker exec -it autodiller-db_postgres bash
-	psql -U postgres -d autodiller_salon -f /root/sql_dmls/simulate_operations.sql
+	docker exec -it autodiller-db_postgres bash -c \
+	'psql -U postgres -d autodiller_salon -f /root/sql_dmls/simulate_operations.sql'
 
