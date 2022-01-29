@@ -36,13 +36,13 @@ CREATE SCHEMA IF NOT EXISTS hr;
 COMMENT ON SCHEMA hr IS 'The schema for HR domain';
 
 CREATE SCHEMA IF NOT EXISTS finance;
-COMMENT ON SCHEMA hr IS 'The schema for finance department';
+COMMENT ON SCHEMA finance IS 'The schema for finance department';
 
 CREATE SCHEMA IF NOT EXISTS operations;
-COMMENT ON SCHEMA hr IS 'The schema for storing operations logs';
+COMMENT ON SCHEMA operations IS 'The schema for storing operations logs';
 
 CREATE SCHEMA IF NOT EXISTS sales;
-COMMENT ON SCHEMA hr IS 'The schema for storing all business logic of the salon';
+COMMENT ON SCHEMA sales IS 'The schema for storing all business logic of the salon';
 
 CREATE SCHEMA IF NOT EXISTS public;
 
