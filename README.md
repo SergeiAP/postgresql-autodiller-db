@@ -15,7 +15,9 @@ __The project includes__:
 5. Common comands to container operations (based on Makefile) and use database itself (based on functions, views)
 
 __Stack__: PostgreSQL (DDL, DML, ERD), pgAdmin, docker, docker-compose, bash, makefile, git
+
 __Prerequirements__: [docker](https://docs.docker.com/engine/install/ubuntu/)
+
 __Optional__: [docker-compose](https://docs.docker.com/compose/install/), [pgAdmin](https://www.pgadmin.org/download/)
 ## 2. Repo structure
 __Folders__:
